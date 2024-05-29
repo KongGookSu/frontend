@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 export interface IText {
     size: "xxxs" | "xxxs" | "xxs" | "xs" | "s" | "m" | "l" | "xl" | "xxl" | "xxxl";
-    weight: "bold" | "normal";
-    variant?: "primary" | "secondary" | "background" | "success" | "warning" | "black" | "white";
+    weight?: "bold" | "normal";
+    variant?: "primary" | "secondary" | "background" | "success" | "warning" | "black" | "white" | "gray";
+    marginBottom?: number;
 }
 
 export const Text = styled.span<IText>`
@@ -50,6 +51,8 @@ export const Text = styled.span<IText>`
                 return "#000000";
             case "white":
                 return "#ffffff";
+            case "gray":
+                return "#545454";
             default:
                 return props.variant;
         }
