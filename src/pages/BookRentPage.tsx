@@ -1,7 +1,9 @@
+import { TopBar } from "@/components/display/TopBar";
+
 export default function BookRentPage() {
-  return (
-    <>
-      <h1>Book Rent Page</h1>
-    </>
-  );
+    return (
+        <>
+            <TopBar title="책 대여" />
+        </>
+    );
 }
