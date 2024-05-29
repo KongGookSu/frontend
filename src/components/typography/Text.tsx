@@ -3,7 +3,7 @@ import styled from "styled-components";
 export interface IText {
     size: "xxxs" | "xxxs" | "xxs" | "xs" | "s" | "m" | "l" | "xl" | "xxl" | "xxxl";
     weight?: "bold" | "normal";
-    variant?: "primary" | "secondary" | "background" | "success" | "warning" | "black" | "white" | "gray";
+    variant?: "primary" | "secondary" | "background" | "success" | "warning" | "black" | "white" | "gray" | "yellow";
     marginBottom?: number;
 }
 
@@ -52,7 +52,9 @@ export const Text = styled.span<IText>`
             case "white":
                 return "#ffffff";
             case "gray":
-                return "#545454";
+                return "#6C7278";
+            case "yellow":
+                return "#FCCB40";
             default:
                 return props.variant;
         }
