@@ -1,7 +1,9 @@
+import { TopBar } from "@/components/display/TopBar";
+
 export default function BookSearchPage() {
-  return (
-    <>
-      <h1>Book Search Page</h1>
-    </>
-  );
+    return (
+        <>
+            <TopBar title="책 검색" />
+        </>
+    );
 }
