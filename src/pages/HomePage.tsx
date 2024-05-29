@@ -1,6 +1,7 @@
 import { Event } from "@/components/display/Event";
 import { PopularBooks } from "@/components/display/PopularBooks";
 import { Search } from "@/components/display/Search";
+import { TopRankers } from "@/components/display/TopRankers";
 import { Button } from "@/components/forms/Button";
 import { Paragraph } from "@/components/typography/Paragraph";
 import { Text } from "@/components/typography/Text";
@@ -63,6 +64,7 @@ export default function HomePage() {
                     <Paragraph size="l" weight="bold">
                         {dummyPlace} 지역 연간 대여자 Top Ranker
                     </Paragraph>
+                    <TopRankers />
                 </SectionWrapper>
             </Container>
         </>
