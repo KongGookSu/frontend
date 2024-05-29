@@ -1,4 +1,5 @@
 import { Event } from "@/components/display/Event";
+import { PopularBooks } from "@/components/display/PopularBooks";
 import { Search } from "@/components/display/Search";
 import { Button } from "@/components/forms/Button";
 import { Paragraph } from "@/components/typography/Paragraph";
@@ -13,6 +14,7 @@ export default function HomePage() {
     return (
         <>
             <Container>
+                {/* 환영 섹션 */}
                 <HelloContent>
                     <Paragraph size="xxl" weight="bold">
                         안녕하세요, {dummyName}님!
@@ -23,10 +25,13 @@ export default function HomePage() {
                     </Paragraph>
                 </HelloContent>
 
+                {/* 검색 섹션 */}
                 <Search />
 
+                {/* 이벤트 섹션 */}
                 <Event />
 
+                {/* 시작하기 섹션 */}
                 <SectionWrapper>
                     <Paragraph size="l" weight="bold">
                         시작하기
@@ -45,12 +50,15 @@ export default function HomePage() {
                     </ButtonWrapper>
                 </SectionWrapper>
 
+                {/* 인기도서 섹션 */}
                 <SectionWrapper>
                     <Paragraph size="l" weight="bold">
                         인기있는 도서
                     </Paragraph>
+                    <PopularBooks />
                 </SectionWrapper>
 
+                {/* 랭커 섹션 */}
                 <SectionWrapper>
                     <Paragraph size="l" weight="bold">
                         {dummyPlace} 지역 연간 대여자 Top Ranker
