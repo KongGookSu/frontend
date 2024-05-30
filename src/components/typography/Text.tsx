@@ -46,7 +46,7 @@ export const Text = styled.span<IText>`
             case "success":
                 return "#4c935e";
             case "warning":
-                return "cc4545";
+                return "#cc4545";
             case "black":
                 return "#000000";
             case "white":
