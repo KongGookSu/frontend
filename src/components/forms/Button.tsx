@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export interface IButton {
     size: "s" | "m" | "l";
-    variant: "primary" | "secondary";
+    variant: "primary" | "secondary" | "white";
 }
 
 export const Button = styled.button<IButton>`
@@ -31,16 +31,24 @@ export const Button = styled.button<IButton>`
     }};
 
     border: none;
-    border-radius: 40px;
+    border-radius: ${(props) => {
+        switch (props.size) {
+            case "l":
+                return "15px";
+            default:
+                return "40px";
+        }
+    }};
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
-    color: #fff;
     background-color: ${(props) => {
         switch (props.variant) {
             case "primary":
                 return "#9045DC";
             case "secondary":
                 return "#AE7AE3";
+            case "white":
+                return "#ffffff";
         }
     }};
 `;
