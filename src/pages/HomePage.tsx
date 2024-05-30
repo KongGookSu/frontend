@@ -43,12 +43,12 @@ export default function HomePage() {
                 </Paragraph>
                 <ButtonWrapper>
                     <Button size="m" variant="primary" onClick={() => navigate("/enroll")}>
-                        <Text size="s" weight="bold">
+                        <Text size="s" weight="bold" variant="white">
                             책 등록하기
                         </Text>
                     </Button>
                     <Button size="m" variant="primary" onClick={() => navigate("/book")}>
-                        <Text size="s" weight="bold">
+                        <Text size="s" weight="bold" variant="white">
                             책 대여하기
                         </Text>
                     </Button>
