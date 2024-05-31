@@ -1,10 +1,20 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-export const TopBarWrapper = styled.div`
+interface TopBarWrapperProps {
+    isBookDetailPage: boolean;
+}
+
+export const TopBarWrapper = styled.div<TopBarWrapperProps>`
     display: flex;
     align-items: center;
     padding: 10px 0;
     height: 50px;
+
+    ${(props) =>
+        props.isBookDetailPage &&
+        css`
+            padding: 0 10px;
+        `}
 `;
 
 export const BackButton = styled.button`
