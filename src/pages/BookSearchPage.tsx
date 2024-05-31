@@ -16,7 +16,7 @@ export default function BookSearchPage() {
             <SearchPageWrapper>
                 <Search onSearch={handleSearch} />
                 {searchTerm === "" ? (
-                    <SearchHint />
+                    <SearchHint message="검색 창에 텍스트를 입력해주세요" />
                 ) : (
                     <BookList>
                         {filteredBooks.map((book) => (

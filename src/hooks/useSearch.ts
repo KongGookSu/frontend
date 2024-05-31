@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import booksData from "@/constants/booksData.json";
+
 interface IBook {
     id: number;
     title: string;
@@ -17,9 +19,11 @@ export const useSearch = () => {
         setSearchTerm(term);
     };
 
+    const filteredBooks = booksData.filter((book) => book.title.toLowerCase().includes(searchTerm.toLowerCase()));
+
     const filteredBooksByName = (books: IBook[]): IBook[] => {
         return books.filter((book) => book.title.toLowerCase().includes(searchTerm.toLowerCase()));
     };
 
-    return { searchTerm, handleSearch, filteredBooksByName };
+    return { searchTerm, handleSearch, filteredBooks, filteredBooksByName };
 };
