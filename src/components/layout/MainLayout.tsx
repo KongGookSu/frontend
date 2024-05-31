@@ -4,17 +4,17 @@ import styled, { css } from "styled-components";
 
 export const MainLayout = () => {
     const location = useLocation();
-    const isLoginPage = location.pathname === "/login";
+    const isLoginOrDetailPage = location.pathname === "/login" || location.pathname.startsWith("/book/");
 
     return (
-        <Main isLoginPage={isLoginPage}>
+        <Main isSpecialPage={isLoginOrDetailPage}>
             <Outlet />
         </Main>
     );
 };
 
 interface MainProps {
-    isLoginPage: boolean;
+    isSpecialPage: boolean;
 }
 
 const Main = styled.main<MainProps>`
@@ -26,7 +26,7 @@ const Main = styled.main<MainProps>`
     box-sizing: border-box;
 
     ${(props) =>
-        props.isLoginPage &&
+        props.isSpecialPage &&
         css`
             padding: 0;
         `}
