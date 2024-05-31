@@ -1,5 +1,6 @@
 import React from "react";
 import { AiFillStar } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 
 import { Text } from "@/components/typography/Text";
 
@@ -18,8 +19,14 @@ interface BookItemProps {
 }
 
 export const BookItem: React.FC<BookItemProps> = ({ book }) => {
+    const navigate = useNavigate();
+
+    const handleItemClick = () => {
+        navigate(`/book/${book.id}`);
+    };
+
     return (
-        <BookItemWrapper>
+        <BookItemWrapper onClick={handleItemClick}>
             <Paragraph size="m" weight="bold">
                 {book.title}
             </Paragraph>
