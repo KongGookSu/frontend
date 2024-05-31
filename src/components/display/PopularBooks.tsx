@@ -6,6 +6,8 @@ import { Text } from "@/components/typography/Text";
 
 import popularBookData from "@/constants/popularBookData.json";
 
+import { IBookData } from "@/utils/filterBooks";
+
 import {
     PopularBooksWrapper,
     PopularBooksContainer,
@@ -15,21 +17,6 @@ import {
     BookCard,
     BookDescription,
 } from "./PopularBooks.styled";
-
-interface IBook {
-    id: number;
-    title: string;
-    duration: string;
-    rating: number;
-    pages: number;
-    description: string;
-    imageUrl: string;
-}
-
-interface IBookData {
-    place: string;
-    books: IBook[];
-}
 
 const booksData: IBookData[] = popularBookData as IBookData[];
 

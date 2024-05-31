@@ -5,7 +5,6 @@ export const SearchWrapper = styled.div`
     justify-content: center;
     margin-bottom: 20px;
     padding: 20px 0;
-    border-radius: 20px;
 `;
 
 export const SearchContainer = styled.div`
@@ -14,7 +13,7 @@ export const SearchContainer = styled.div`
     justify-content: space-between;
     background-color: white;
     padding: 10px 20px;
-    border-radius: 20px;
+    border-radius: 15px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 `;
 
