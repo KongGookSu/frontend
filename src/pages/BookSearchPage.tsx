@@ -1,22 +1,14 @@
-import { useState } from "react";
-
 import { BookItem } from "@/components/display/BookItem";
 import { Search } from "@/components/display/Search";
 import { SearchHint } from "@/components/display/SearchHint";
 import { TopBar } from "@/components/display/TopBar";
 
-import booksData from "@/constants/booksData.json";
+import { useSearch } from "@/hooks/useSearch";
 
 import { BookList, SearchPageWrapper } from "./BookSearchPage.styled";
 
 export default function BookSearchPage() {
-    const [searchTerm, setSearchTerm] = useState("");
-
-    const handleSearch = (term: string) => {
-        setSearchTerm(term);
-    };
-
-    const filteredBooks = booksData.filter((book) => book.title.toLowerCase().includes(searchTerm.toLowerCase()));
+    const { searchTerm, handleSearch, filteredBooks } = useSearch();
 
     return (
         <>
