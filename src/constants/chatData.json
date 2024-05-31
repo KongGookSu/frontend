@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "윤재용",
+        "message": "좋습니다! 그 때 뵈요~",
+        "time": "13:02",
+        "unreadCount": 1,
+        "avatarUrl": "https://avatars.githubusercontent.com/u/103253736?v=4"
+    },
+    {
+        "id": 2,
+        "name": "심규민",
+        "message": "아쉽게도 그 때는 시간이 어려울..",
+        "time": "06:35",
+        "unreadCount": 0,
+        "avatarUrl": "https://avatars.githubusercontent.com/u/49743742?v=4"
+    },
+    {
+        "id": 3,
+        "name": "김민주",
+        "message": "제가 지금 다른 곳으로 출장을 나와..",
+        "time": "08:10",
+        "unreadCount": 2,
+        "avatarUrl": "https://avatars.githubusercontent.com/u/91789311?v=4"
+    }
+]

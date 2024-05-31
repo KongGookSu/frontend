@@ -1,3 +1,4 @@
+import { IoChatbubbleEllipses } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 
 import { Event } from "@/components/display/Event";
@@ -9,7 +10,7 @@ import { Button } from "@/components/forms/Button";
 import { Paragraph } from "@/components/typography/Paragraph";
 import { Text } from "@/components/typography/Text";
 
-import { HelloContent, ButtonWrapper } from "./HomePage.styled";
+import { HelloContent, ButtonWrapper, NameAndChatWrapper, ChatButton } from "./HomePage.styled";
 
 const dummyName = "준혁";
 const dummyPlace = "대구";
@@ -21,9 +22,14 @@ export default function HomePage() {
         <>
             {/* 환영 섹션 */}
             <HelloContent>
-                <Paragraph size="xxl" weight="bold">
-                    안녕하세요, {dummyName}님!
-                </Paragraph>
+                <NameAndChatWrapper>
+                    <Text size="xxl" weight="bold">
+                        안녕하세요, {dummyName}님!
+                    </Text>
+                    <ChatButton onClick={() => navigate("/chat")}>
+                        <IoChatbubbleEllipses size={24} color="#ffffff" />
+                    </ChatButton>
+                </NameAndChatWrapper>
                 <Paragraph size="s" variant="gray">
                     오늘은 어떤 책을 읽고 싶으신가요? <br />
                     함께 책을 읽으러 가봐요!
