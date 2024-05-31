@@ -16,6 +16,7 @@ export const BackButton = styled.button`
     justify-content: center;
     margin-right: 10px;
     font-size: 20px;
+    z-index: 99;
 
     &:focus {
         outline: none;
