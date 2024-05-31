@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import { BookItem } from "@/components/display/BookItem";
 import { Search } from "@/components/display/Search";
+import { SearchHint } from "@/components/display/SearchHint";
 import { TopBar } from "@/components/display/TopBar";
 
 import booksData from "@/constants/booksData.json";
@@ -22,12 +23,15 @@ export default function BookSearchPage() {
             <TopBar title="책 검색" />
             <SearchPageWrapper>
                 <Search onSearch={handleSearch} />
-
-                <BookList>
-                    {filteredBooks.map((book) => (
-                        <BookItem key={book.id} book={book} />
-                    ))}
-                </BookList>
+                {searchTerm === "" ? (
+                    <SearchHint />
+                ) : (
+                    <BookList>
+                        {filteredBooks.map((book) => (
+                            <BookItem key={book.id} book={book} />
+                        ))}
+                    </BookList>
+                )}
             </SearchPageWrapper>
         </>
     );
