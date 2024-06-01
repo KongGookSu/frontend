@@ -2,7 +2,7 @@ import axios from "axios";
 
 import { useUserStore } from "@/store/store";
 
-const API_URL = "http://3.39.34.198:8080/api/accounts";
+const API_URL = "//3.39.34.198:8080/api/accounts";
 
 export const fetchUserAccounts = async () => {
     try {
