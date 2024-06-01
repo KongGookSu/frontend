@@ -1,4 +1,6 @@
+// src/pages/LoginPage.tsx
 import { FcGoogle } from "react-icons/fc";
+import { useNavigate } from "react-router-dom";
 
 import axios from "axios";
 import styled from "styled-components";
@@ -9,23 +11,39 @@ import { Text } from "@/components/typography/Text";
 
 import logo from "@/assets/logo.png";
 
-import { GoogleOAuthProvider, GoogleLogin, googleLogout } from "@react-oauth/google";
+import { useUserStore } from "@/store/store";
+import { GoogleOAuthProvider, GoogleLogin, CredentialResponse } from "@react-oauth/google";
 
 const CLIENT_ID = import.meta.env.VITE_GOOGLE_CLIENT_ID;
 
+interface ServerResponse {
+    accessToken: string;
+    refreshToken: string;
+}
+
 export default function LoginPage() {
-    const handleSuccess = async (response) => {
+    const navigate = useNavigate();
+    const setTokens = useUserStore((state) => state.setTokens);
+
+    const handleSuccess = async (response: CredentialResponse) => {
         console.log("Login Success:", response);
         if (response.credential) {
             const credential = response.credential;
             try {
-                const serverResponse = await axios.post(
+                const serverResponse = await axios.post<ServerResponse>(
                     `http://localhost:8080/login/oauth2/google?code=${credential}`,
                     {
                         token: credential,
                     },
                 );
                 console.log("Server Response:", serverResponse.data);
+                const { accessToken, refreshToken } = serverResponse.data;
+
+                // 토큰 저장
+                setTokens(accessToken, refreshToken);
+
+                // 홈 페이지로 리디렉션
+                navigate("/");
             } catch (error) {
                 console.error("Error sending token to server:", error);
             }
