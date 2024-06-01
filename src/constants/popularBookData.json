@@ -44,51 +44,96 @@
         ]
     },
     {
-        "place": "서울",
+        "place": "경북",
         "books": [
             {
-                "id": 4,
-                "title": "서울의 밤하늘",
+                "id": 44,
+                "title": "경북의 역사",
                 "author": "홍길동",
                 "publisher": "경북대학교출판부",
                 "isbn": "111-11-11111-11-1",
                 "publicationDate": "2024-01-01",
-                "duration": "14일",
-                "rating": 4.2,
-                "pages": 320,
-                "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident molestiae delectus neque similique voluptates rerum dignissimos fugit sapiente ex illo repellat nisi unde, illum error atque enim ad debitis magni! Ducimus excepturi eaque nisi eveniet voluptates facere aliquam enim sint ullam officiis, quam, optio architecto nam quia molestiae, sequi minus rem nostrum suscipit. Nulla repellat ullam ipsam consequuntur fugiat voluptates. ",
+                "duration": "30일",
+                "rating": 4.5,
+                "pages": 500,
+                "description": "경북의 역사를 깊이 있게 다룬 책.",
                 "imageUrl": "/src/assets/book-default.png"
             },
             {
-                "id": 5,
-                "title": "서울의 낮과 밤",
+                "id": 45,
+                "title": "경북의 문화",
                 "author": "홍길동",
                 "publisher": "경북대학교출판부",
                 "isbn": "111-11-11111-11-1",
                 "publicationDate": "2024-01-01",
-                "duration": "10일",
-                "rating": 4.8,
-                "pages": 450,
-                "description": "서울의 낮과 밤을 모두 담은 도서.",
+                "duration": "18일",
+                "rating": 4.4,
+                "pages": 420,
+                "description": "경북의 문화를 탐구한 도서.",
                 "imageUrl": "/src/assets/book-default.png"
             },
             {
-                "id": 6,
-                "title": "서울의 맛집 탐방",
+                "id": 46,
+                "title": "경북의 맛집 탐방",
                 "author": "홍길동",
                 "publisher": "경북대학교출판부",
                 "isbn": "111-11-11111-11-1",
                 "publicationDate": "2024-01-01",
-                "duration": "21일",
-                "rating": 4.7,
-                "pages": 380,
-                "description": "서울의 숨겨진 맛집들을 소개하는 책.",
+                "duration": "22일",
+                "rating": 4.6,
+                "pages": 390,
+                "description": "경북의 맛집을 소개하는 책.",
                 "imageUrl": "/src/assets/book-default.png"
             }
         ]
     },
     {
-        "place": "부산",
+        "place": "경남",
+        "books": [
+            {
+                "id": 47,
+                "title": "경남의 역사",
+                "author": "홍길동",
+                "publisher": "경북대학교출판부",
+                "isbn": "111-11-11111-11-1",
+                "publicationDate": "2024-01-01",
+                "duration": "30일",
+                "rating": 4.5,
+                "pages": 500,
+                "description": "경남의 역사를 깊이 있게 다룬 책.",
+                "imageUrl": "/src/assets/book-default.png"
+            },
+            {
+                "id": 48,
+                "title": "경남의 문화",
+                "author": "홍길동",
+                "publisher": "경북대학교출판부",
+                "isbn": "111-11-11111-11-1",
+                "publicationDate": "2024-01-01",
+                "duration": "18일",
+                "rating": 4.4,
+                "pages": 420,
+                "description": "경남의 문화를 탐구한 도서.",
+                "imageUrl": "/src/assets/book-default.png"
+            },
+            {
+                "id": 49,
+                "title": "경남의 맛집 탐방",
+                "author": "홍길동",
+                "publisher": "경북대학교출판부",
+                "isbn": "111-11-11111-11-1",
+                "publicationDate": "2024-01-01",
+                "duration": "22일",
+                "rating": 4.6,
+                "pages": 390,
+                "description": "경남의 맛집을 소개하는 책.",
+                "imageUrl": "/src/assets/book-default.png"
+            }
+        ]
+    },
+
+    {
+        "place": "부산광역시",
         "books": [
             {
                 "id": 7,
@@ -145,7 +190,51 @@
         ]
     },
     {
-        "place": "대전",
+        "place": "서울특별시",
+        "books": [
+            {
+                "id": 4,
+                "title": "서울의 밤하늘",
+                "author": "홍길동",
+                "publisher": "경북대학교출판부",
+                "isbn": "111-11-11111-11-1",
+                "publicationDate": "2024-01-01",
+                "duration": "14일",
+                "rating": 4.2,
+                "pages": 320,
+                "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident molestiae delectus neque similique voluptates rerum dignissimos fugit sapiente ex illo repellat nisi unde, illum error atque enim ad debitis magni! Ducimus excepturi eaque nisi eveniet voluptates facere aliquam enim sint ullam officiis, quam, optio architecto nam quia molestiae, sequi minus rem nostrum suscipit. Nulla repellat ullam ipsam consequuntur fugiat voluptates. ",
+                "imageUrl": "/src/assets/book-default.png"
+            },
+            {
+                "id": 5,
+                "title": "서울의 낮과 밤",
+                "author": "홍길동",
+                "publisher": "경북대학교출판부",
+                "isbn": "111-11-11111-11-1",
+                "publicationDate": "2024-01-01",
+                "duration": "10일",
+                "rating": 4.8,
+                "pages": 450,
+                "description": "서울의 낮과 밤을 모두 담은 도서.",
+                "imageUrl": "/src/assets/book-default.png"
+            },
+            {
+                "id": 6,
+                "title": "서울의 맛집 탐방",
+                "author": "홍길동",
+                "publisher": "경북대학교출판부",
+                "isbn": "111-11-11111-11-1",
+                "publicationDate": "2024-01-01",
+                "duration": "21일",
+                "rating": 4.7,
+                "pages": 380,
+                "description": "서울의 숨겨진 맛집들을 소개하는 책.",
+                "imageUrl": "/src/assets/book-default.png"
+            }
+        ]
+    },
+    {
+        "place": "대전광역시",
         "books": [
             {
                 "id": 11,
@@ -189,7 +278,7 @@
         ]
     },
     {
-        "place": "광주",
+        "place": "광주광역시",
         "books": [
             {
                 "id": 14,
@@ -233,7 +322,7 @@
         ]
     },
     {
-        "place": "인천",
+        "place": "인천광역시",
         "books": [
             {
                 "id": 17,
@@ -277,7 +366,7 @@
         ]
     },
     {
-        "place": "울산",
+        "place": "울산광역시",
         "books": [
             {
                 "id": 20,
@@ -628,94 +717,7 @@
             }
         ]
     },
-    {
-        "place": "경북",
-        "books": [
-            {
-                "id": 44,
-                "title": "경북의 역사",
-                "author": "홍길동",
-                "publisher": "경북대학교출판부",
-                "isbn": "111-11-11111-11-1",
-                "publicationDate": "2024-01-01",
-                "duration": "30일",
-                "rating": 4.5,
-                "pages": 500,
-                "description": "경북의 역사를 깊이 있게 다룬 책.",
-                "imageUrl": "/src/assets/book-default.png"
-            },
-            {
-                "id": 45,
-                "title": "경북의 문화",
-                "author": "홍길동",
-                "publisher": "경북대학교출판부",
-                "isbn": "111-11-11111-11-1",
-                "publicationDate": "2024-01-01",
-                "duration": "18일",
-                "rating": 4.4,
-                "pages": 420,
-                "description": "경북의 문화를 탐구한 도서.",
-                "imageUrl": "/src/assets/book-default.png"
-            },
-            {
-                "id": 46,
-                "title": "경북의 맛집 탐방",
-                "author": "홍길동",
-                "publisher": "경북대학교출판부",
-                "isbn": "111-11-11111-11-1",
-                "publicationDate": "2024-01-01",
-                "duration": "22일",
-                "rating": 4.6,
-                "pages": 390,
-                "description": "경북의 맛집을 소개하는 책.",
-                "imageUrl": "/src/assets/book-default.png"
-            }
-        ]
-    },
-    {
-        "place": "경남",
-        "books": [
-            {
-                "id": 47,
-                "title": "경남의 역사",
-                "author": "홍길동",
-                "publisher": "경북대학교출판부",
-                "isbn": "111-11-11111-11-1",
-                "publicationDate": "2024-01-01",
-                "duration": "30일",
-                "rating": 4.5,
-                "pages": 500,
-                "description": "경남의 역사를 깊이 있게 다룬 책.",
-                "imageUrl": "/src/assets/book-default.png"
-            },
-            {
-                "id": 48,
-                "title": "경남의 문화",
-                "author": "홍길동",
-                "publisher": "경북대학교출판부",
-                "isbn": "111-11-11111-11-1",
-                "publicationDate": "2024-01-01",
-                "duration": "18일",
-                "rating": 4.4,
-                "pages": 420,
-                "description": "경남의 문화를 탐구한 도서.",
-                "imageUrl": "/src/assets/book-default.png"
-            },
-            {
-                "id": 49,
-                "title": "경남의 맛집 탐방",
-                "author": "홍길동",
-                "publisher": "경북대학교출판부",
-                "isbn": "111-11-11111-11-1",
-                "publicationDate": "2024-01-01",
-                "duration": "22일",
-                "rating": 4.6,
-                "pages": 390,
-                "description": "경남의 맛집을 소개하는 책.",
-                "imageUrl": "/src/assets/book-default.png"
-            }
-        ]
-    },
+
     {
         "place": "제주",
         "books": [
