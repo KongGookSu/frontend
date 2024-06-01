@@ -1,3 +1,4 @@
+import { FaUser } from "react-icons/fa";
 import { IoChatbubbleEllipses } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 
@@ -10,13 +11,16 @@ import { Button } from "@/components/forms/Button";
 import { Paragraph } from "@/components/typography/Paragraph";
 import { Text } from "@/components/typography/Text";
 
-import { HelloContent, ButtonWrapper, NameAndChatWrapper, ChatButton } from "./HomePage.styled";
-
-const dummyName = "준혁";
-const dummyPlace = "대구";
+import { HelloContent, UpperButtonWrapper, ButtonWrapper, NameAndChatWrapper, ChatButton } from "./HomePage.styled";
+import { useUserStore } from "@/store/store";
 
 export default function HomePage() {
     const navigate = useNavigate();
+    const currentUser = useUserStore((state) => state.currentUser);
+
+    if (!currentUser) {
+        return null; // 나중에 skeleton 넣게 되면 수정하면 될 듯
+    }
 
     return (
         <>
@@ -24,11 +28,16 @@ export default function HomePage() {
             <HelloContent>
                 <NameAndChatWrapper>
                     <Text size="xxl" weight="bold">
-                        안녕하세요, {dummyName}님!
+                        안녕하세요, {currentUser.name}님!
                     </Text>
-                    <ChatButton onClick={() => navigate("/chat")}>
-                        <IoChatbubbleEllipses size={24} color="#ffffff" />
-                    </ChatButton>
+                    <UpperButtonWrapper>
+                        <ChatButton onClick={() => navigate("/chat")}>
+                            <IoChatbubbleEllipses size={24} color="#ffffff" />
+                        </ChatButton>
+                        <ChatButton onClick={() => navigate(`/user/${currentUser.id}`)}>
+                            <FaUser size={24} color="#ffffff" />
+                        </ChatButton>
+                    </UpperButtonWrapper>
                 </NameAndChatWrapper>
                 <Paragraph size="s" variant="gray">
                     오늘은 어떤 책을 읽고 싶으신가요? <br />
@@ -72,7 +81,7 @@ export default function HomePage() {
             {/* 랭커 섹션 */}
             <SectionWrapper>
                 <Paragraph size="l" weight="bold">
-                    {dummyPlace} 지역 연간 대여자 Top Ranker
+                    {currentUser.place} 지역 연간 대여자 Top Ranker
                 </Paragraph>
                 <TopRankers />
             </SectionWrapper>

@@ -9,6 +9,11 @@ export const ButtonWrapper = styled.div`
     justify-content: space-around;
 `;
 
+export const UpperButtonWrapper = styled.div`
+    display: flex;
+    gap: 10px;
+`;
+
 export const NameAndChatWrapper = styled.div`
     display: flex;
     align-items: center;
@@ -17,8 +22,8 @@ export const NameAndChatWrapper = styled.div`
 
 export const ChatButton = styled.button`
     margin-top: 16px;
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     border-radius: 12px;
     background-color: #9045dc;
     border: none;
