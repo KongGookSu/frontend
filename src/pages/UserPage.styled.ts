@@ -12,7 +12,8 @@ export const UserPageWrapper = styled.div`
 export const UserInfoWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: center;
+    width: 100%;
+    align-items: flex-start;
     gap: 5px;
     margin-bottom: 20px;
 `;
