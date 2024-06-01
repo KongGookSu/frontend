@@ -1,7 +1,7 @@
 
 # GLOW 해커톤 - 가지도서관!
 ![gaji_logo](https://github.com/KongGookSu/frontend/assets/103253736/d165b63c-4bb0-4ed8-acc2-436855c2ab1c)
-<img width="1260" alt="스크린샷 2024-06-02 오전 4 57 55" src="https://github.com/KongGookSu/backend-spring/assets/103253736/02eaf96d-7d05-4656-98ef-d53002f99190">
+<img width="1000" alt="스크린샷 2024-06-02 오전 4 57 55" src="https://github.com/KongGookSu/backend-spring/assets/103253736/02eaf96d-7d05-4656-98ef-d53002f99190">
 
 ## 목차
 - [개발 배경](#개발-배경)
