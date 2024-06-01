@@ -11,7 +11,7 @@ import { useSearch } from "@/hooks/useSearch";
 
 import booksData from "@/constants/popularBookData.json";
 
-import { BookList, BookRentPageWrapper } from "./BookRentPage.styled";
+import { BookList, BookRentPageWrapper, LoadingMessage } from "./BookRentPage.styled";
 
 interface IBook {
     id: number;
@@ -51,7 +51,9 @@ export default function BookRentPage() {
             <BookRentPageWrapper>
                 <Location />
                 <Search onSearch={handleSearch} />
-                {filteredBooksByPlace.length === 0 ? (
+                {!city ? (
+                    <LoadingMessage>검색 중입니다...</LoadingMessage>
+                ) : filteredBooksByPlace.length === 0 ? (
                     <SearchHint message="현재 도시에 책이 없습니다" />
                 ) : finalFilteredBooks.length === 0 ? (
                     <SearchHint message="검색 결과가 없습니다" />
