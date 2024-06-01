@@ -2,3 +2,9 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
+[[redirects]]
+  from = "/login/oauth2/google"
+  to = "http://3.39.34.198:8080/login/oauth2/google"
+  status = 200
+  force = true
