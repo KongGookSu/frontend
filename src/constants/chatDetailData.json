@@ -1,0 +1,40 @@
+{
+    "chatId": 1,
+    "messages": [
+        {
+            "id": 1,
+            "sender": "나",
+            "message": "안녕하세요! 책을 빌리고 싶어서 연락 드렸습니다.",
+            "time": "오전 10:41",
+            "type": "sent"
+        },
+        {
+            "id": 2,
+            "sender": "나",
+            "message": "혹시 언제쯤 받을 수 있을까요?",
+            "time": "오전 10:42",
+            "type": "sent"
+        },
+        {
+            "id": 3,
+            "sender": "윤재용",
+            "message": "안녕하세요, 준혁님!",
+            "time": "오후 12:29",
+            "type": "received"
+        },
+        {
+            "id": 4,
+            "sender": "윤재용",
+            "message": "오늘 오후 6시는 어떠신가요? 그 때 시간이 가능할 것 같아요.",
+            "time": "오후 12:30",
+            "type": "received"
+        },
+        {
+            "id": 5,
+            "sender": "나",
+            "message": "좋습니다! 그 때 봬요~",
+            "time": "오후 01:02",
+            "type": "sent"
+        }
+    ]
+}
