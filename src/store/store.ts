@@ -2,9 +2,9 @@ import { create } from "zustand";
 
 export interface User {
     id: number;
-    name: string;
-    imageUrl: string;
-    place: string;
+    email: string;
+    vendor: string;
+    nickname: string;
 }
 
 interface UserState {

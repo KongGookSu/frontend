@@ -19,36 +19,41 @@ import { useUserStore } from "@/store/store";
 export default function HomePage() {
     const navigate = useNavigate();
     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const [error, setError] = useState<Error | null>(null);
     const currentUser = useUserStore((state) => state.currentUser);
     const setUsers = useUserStore((state) => state.setUsers);
+    const setCurrentUser = useUserStore((state) => state.setCurrentUser);
 
     useEffect(() => {
         const loadUserAccounts = async () => {
             try {
                 const accounts = await fetchUserAccounts();
+                console.log("Fetched accounts:", accounts);
                 setUsers(accounts);
+                setCurrentUser(accounts);
                 setLoading(false);
             } catch (error: unknown) {
-                setError(error as React.SetStateAction<null>);
+                setError(error as Error);
                 setLoading(false);
             }
         };
 
         loadUserAccounts();
-    }, [setUsers]);
+    }, [setUsers, setCurrentUser]);
 
     if (loading) {
-        return <div>Loading...</div>; // 로딩 중인 경우 표시
+        return <div>Loading...</div>;
     }
 
     if (error) {
-        return <div>Error: {error.message}</div>; // 에러 발생 시 표시
+        return <div>Error: {error.message}</div>;
     }
 
     if (!currentUser) {
-        return null; // 나중에 skeleton 넣게 되면 수정하면 될 듯
+        return <div>No current user found</div>;
     }
+
+    console.log("Current User:", currentUser);
 
     return (
         <>
@@ -56,7 +61,7 @@ export default function HomePage() {
             <HelloContent>
                 <NameAndChatWrapper>
                     <Text size="xxl" weight="bold">
-                        안녕하세요, {currentUser.name}님!
+                        안녕하세요, {currentUser.nickname}님!
                     </Text>
                     <UpperButtonWrapper>
                         <ChatButton onClick={() => navigate("/chat")}>
@@ -109,7 +114,7 @@ export default function HomePage() {
             {/* 랭커 섹션 */}
             <SectionWrapper>
                 <Paragraph size="l" weight="bold">
-                    {currentUser.place} 지역 연간 대여자 Top Ranker
+                    대구 지역 연간 대여자 Top Ranker
                 </Paragraph>
                 <TopRankers />
             </SectionWrapper>
