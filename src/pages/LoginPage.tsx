@@ -28,7 +28,7 @@ export default function LoginPage() {
             const credential = response.credential;
             try {
                 const serverResponse = await axios.post<ServerResponse>(
-                    `http://localhost:8080/login/oauth2/google?code=${credential}`,
+                    `http://3.39.34.198:8080/login/oauth2/google?code=${credential}`,
                     { token: credential },
                 );
                 console.log("Server Response:", serverResponse.data);
