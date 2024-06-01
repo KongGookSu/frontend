@@ -32,11 +32,12 @@ export default function LoginPage() {
                     { token: credential },
                 );
                 console.log("Server Response:", serverResponse.data);
-                navigate("/", { replace: true });
                 const { accessToken, refreshToken } = serverResponse.data;
                 setTokens(accessToken, refreshToken);
             } catch (error) {
                 console.error("Error sending token to server:", error);
+            } finally {
+                navigate("/", { replace: true });
             }
         } else {
             console.error("No credential found in response:", response);
