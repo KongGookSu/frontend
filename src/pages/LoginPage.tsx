@@ -1,11 +1,9 @@
-// src/pages/LoginPage.tsx
 import { FcGoogle } from "react-icons/fc";
 import { useNavigate } from "react-router-dom";
 
 import axios from "axios";
 import styled from "styled-components";
 
-import { Button } from "@/components/forms/Button";
 import { Paragraph } from "@/components/typography/Paragraph";
 import { Text } from "@/components/typography/Text";
 
@@ -39,10 +37,8 @@ export default function LoginPage() {
                 console.log("Server Response:", serverResponse.data);
                 const { accessToken, refreshToken } = serverResponse.data;
 
-                // 토큰 저장
                 setTokens(accessToken, refreshToken);
 
-                // 홈 페이지로 리디렉션
                 navigate("/");
             } catch (error) {
                 console.error("Error sending token to server:", error);
@@ -50,10 +46,6 @@ export default function LoginPage() {
         } else {
             console.error("No credential found in response:", response);
         }
-    };
-
-    const handleFailure = (error) => {
-        console.log("Login Failed:", error);
     };
 
     return (
@@ -73,21 +65,13 @@ export default function LoginPage() {
                         가지 도서관
                     </Paragraph>
                 </ServiceName>
-                <GoogleLogin
-                    onSuccess={handleSuccess}
-                    onError={handleFailure}
-                    useOneTap
-                    render={(renderProps) => (
-                        <Button size="l" variant="white" onClick={renderProps.onClick}>
-                            <ButtonInnerWrapper>
-                                <FcGoogle size={20} />
-                                <Text size="s" variant="gray" weight="bold">
-                                    구글로 시작하기
-                                </Text>
-                            </ButtonInnerWrapper>
-                        </Button>
-                    )}
-                />
+                <StyledGoogleLogin>
+                    <GoogleLogin onSuccess={handleSuccess} useOneTap />
+                    <FcGoogle size={20} />
+                    <Text size="s" variant="gray" weight="bold">
+                        구글로 시작하기
+                    </Text>
+                </StyledGoogleLogin>
             </LoginPageWrapper>
         </GoogleOAuthProvider>
     );
@@ -117,9 +101,18 @@ const ServiceName = styled.div`
     margin-bottom: 50px;
 `;
 
-const ButtonInnerWrapper = styled.div`
+const StyledGoogleLogin = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
+    background-color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+
+    &:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
 `;
