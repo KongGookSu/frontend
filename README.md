@@ -22,15 +22,15 @@
 
 ## 상세 기능 
 ### 로그인 및 회원가입
-![KakaoTalk_Photo_2024-06-02-04-40-00 001](https://github.com/yooonwodyd/spring-admin/assets/103253736/b40fe726-2b5a-49ac-ad07-c90c2517aea8)
+![](https://github.com/yooonwodyd/spring-admin/assets/103253736/b40fe726-2b5a-49ac-ad07-c90c2517aea8)
 ### 위치정보 등록
-![KakaoTalk_Photo_2024-06-02-04-40-11 002](https://github.com/yooonwodyd/spring-admin/assets/103253736/d02f7b02-e1de-4f4c-8903-cc89ebc2ee99)
+![](https://github.com/yooonwodyd/spring-admin/assets/103253736/d02f7b02-e1de-4f4c-8903-cc89ebc2ee99)
 ### 채팅
-[KakaoTalk_Photo_2024-06-02-04-40-23 003](https://github.com/yooonwodyd/spring-admin/assets/103253736/cc96d9f7-765c-43f1-99c6-4b425cf67558)
+[](https://github.com/yooonwodyd/spring-admin/assets/103253736/cc96d9f7-765c-43f1-99c6-4b425cf67558)
 ### 책 대여
-![KakaoTalk_Photo_2024-06-02-04-40-35 004](https://github.com/yooonwodyd/spring-admin/assets/103253736/d3f15433-50e3-4cd3-bbb7-526cb277e01b)
+![](https://github.com/yooonwodyd/spring-admin/assets/103253736/d3f15433-50e3-4cd3-bbb7-526cb277e01b)
 ### 책 등록
-![KakaoTalk_Photo_2024-06-02-04-40-40 005](https://github.com/yooonwodyd/spring-admin/assets/103253736/3c4e6458-8cf1-4e8c-bcc8-06a0a21dde98)
+![](https://github.com/yooonwodyd/spring-admin/assets/103253736/3c4e6458-8cf1-4e8c-bcc8-06a0a21dde98)
 ## 기대 효과
 ### 책으로의 접근성 증대
 도서관에 가지 않고도, 서점에 가지 않고도 쉽게 책을 빌림으로써 소도시의 도서관 부족 문제를 해결합니다. 
