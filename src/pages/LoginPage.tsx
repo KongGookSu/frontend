@@ -32,9 +32,9 @@ export default function LoginPage() {
                     { token: credential },
                 );
                 console.log("Server Response:", serverResponse.data);
+                navigate("/", { replace: true });
                 const { accessToken, refreshToken } = serverResponse.data;
                 setTokens(accessToken, refreshToken);
-                navigate("/", { replace: true });
             } catch (error) {
                 console.error("Error sending token to server:", error);
             }
