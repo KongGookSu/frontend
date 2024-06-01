@@ -21,7 +21,7 @@ import {
 const booksData: IBookData[] = popularBookData as IBookData[];
 
 export const PopularBooks: React.FC = () => {
-    const [selectedPlace, setSelectedPlace] = useState<string>("대구");
+    const [selectedPlace, setSelectedPlace] = useState<string>("대구광역시");
 
     const handleFilterClick = (place: string) => {
         setSelectedPlace(place);
