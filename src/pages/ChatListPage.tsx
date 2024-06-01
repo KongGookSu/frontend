@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { TopBar } from "@/components/display/TopBar";
 import { Paragraph } from "@/components/typography/Paragraph";
@@ -27,6 +28,7 @@ interface IChat {
 
 export default function ChatListPage() {
     const [chats, setChats] = useState<IChat[]>([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         setChats(chatData);
@@ -38,7 +40,7 @@ export default function ChatListPage() {
 
             <ChatListPageWrapper>
                 {chats.map((chat) => (
-                    <ChatItem key={chat.id}>
+                    <ChatItem key={chat.id} onClick={() => navigate(`/chat/${chat.id}`)}>
                         <UserImage src={chat.avatarUrl} />
                         <div>
                             <Paragraph size="m" weight="bold">
