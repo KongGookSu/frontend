@@ -40,7 +40,6 @@ export const useGeolocation = () => {
                 `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${import.meta.env.VITE_GOOGLE_MAPS_API_KEY}`,
             );
             const result: IGeocodingResponse = await response.json();
-            console.log(result);
             if (result.results.length > 0) {
                 const cityComponent = result.results[0].address_components.find(
                     (component: IAddressComponent) =>

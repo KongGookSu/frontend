@@ -7,14 +7,14 @@ import { Text } from "@/components/typography/Text";
 import { useGeolocation } from "@/hooks/useGeolocation";
 
 export const Location: React.FC = () => {
-    const { coordinates, city } = useGeolocation();
+    const { city } = useGeolocation();
 
     return (
         <LocationWrapper>
             <IconWrapper>
                 <FaMapMarkerAlt size={20} color="#9045DC" />
             </IconWrapper>
-            {coordinates.latitude && coordinates.longitude ? (
+            {city ? (
                 <Text size="m" variant="primary" weight="bold">
                     현재 위치: {city}
                 </Text>
