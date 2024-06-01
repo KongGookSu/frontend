@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { FaUser } from "react-icons/fa";
 import { IoChatbubbleEllipses } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
@@ -12,11 +13,38 @@ import { Paragraph } from "@/components/typography/Paragraph";
 import { Text } from "@/components/typography/Text";
 
 import { HelloContent, UpperButtonWrapper, ButtonWrapper, NameAndChatWrapper, ChatButton } from "./HomePage.styled";
+import { fetchUserAccounts } from "@/api/userApi";
 import { useUserStore } from "@/store/store";
 
 export default function HomePage() {
     const navigate = useNavigate();
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
     const currentUser = useUserStore((state) => state.currentUser);
+    const setUsers = useUserStore((state) => state.setUsers);
+
+    useEffect(() => {
+        const loadUserAccounts = async () => {
+            try {
+                const accounts = await fetchUserAccounts();
+                setUsers(accounts);
+                setLoading(false);
+            } catch (error: unknown) {
+                setError(error as React.SetStateAction<null>);
+                setLoading(false);
+            }
+        };
+
+        loadUserAccounts();
+    }, [setUsers]);
+
+    if (loading) {
+        return <div>Loading...</div>; // 로딩 중인 경우 표시
+    }
+
+    if (error) {
+        return <div>Error: {error.message}</div>; // 에러 발생 시 표시
+    }
 
     if (!currentUser) {
         return null; // 나중에 skeleton 넣게 되면 수정하면 될 듯
