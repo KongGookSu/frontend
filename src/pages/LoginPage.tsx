@@ -27,17 +27,15 @@ export default function LoginPage() {
         if (response.credential) {
             const credential = response.credential;
             try {
-                const serverResponse = await axios.post<ServerResponse>(
-                    `//3.39.34.198:8080/login/oauth2/google?code=${credential}`,
-                    { token: credential },
-                );
+                const serverResponse = await axios.post<ServerResponse>(`/login/oauth2/google?code=${credential}`, {
+                    token: credential,
+                });
                 console.log("Server Response:", serverResponse.data);
                 const { accessToken, refreshToken } = serverResponse.data;
                 setTokens(accessToken, refreshToken);
+                navigate("/", { replace: true });
             } catch (error) {
                 console.error("Error sending token to server:", error);
-            } finally {
-                navigate("/", { replace: true });
             }
         } else {
             console.error("No credential found in response:", response);
