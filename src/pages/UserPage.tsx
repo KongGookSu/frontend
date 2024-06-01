@@ -9,7 +9,6 @@ import { useGeolocation } from "@/hooks/useGeolocation";
 import {
     UserPageWrapper,
     UserInfoWrapper,
-    UserImage,
     UserName,
     UserEmail,
     LocationWrapper,
@@ -57,8 +56,7 @@ export default function UserPage() {
             <TopBar title="마이페이지" />
             <UserPageWrapper>
                 <UserInfoWrapper>
-                    <UserImage src={currentUser.imageUrl} alt={currentUser.name} />
-                    <UserName>{currentUser.name}</UserName>
+                    <UserName>{currentUser.nickname}</UserName>
                     <UserEmail>cjh4302@gmail.com</UserEmail>
                 </UserInfoWrapper>
 
