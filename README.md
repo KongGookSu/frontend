@@ -8,6 +8,7 @@
 - [기대 효과](#기대효과)
 - [기여자](#기여자)
 - [아키텍처](#아키텍처)
+- [기타사항](#기타사항)
   
 ## 개발 배경
 ### 1. 독서 인구의 지속적인 감소
@@ -61,4 +62,7 @@
 |------|-------|-------|-------|
 |![](https://avatars.githubusercontent.com/u/103253736?v=4)|![](https://avatars.githubusercontent.com/u/91789311?v=4)|(![](https://avatars.githubusercontent.com/u/49743742?v=4)|![](https://avatars.githubusercontent.com/u/18231524?v=4)|
 |Backend|Backend|Backend|Frontend|
+
+### 기타사항
+[백엔드 레포지토리 주소](https://github.com/KongGookSu/backend-spring)
 
