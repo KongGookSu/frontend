@@ -1,10 +1,8 @@
-import { FcGoogle } from "react-icons/fc";
 import { useNavigate } from "react-router-dom";
 
 import axios from "axios";
 
 import { Paragraph } from "@/components/typography/Paragraph";
-import { Text } from "@/components/typography/Text";
 
 import { LoginPageWrapper, Logo, Slogan, ServiceName, StyledGoogleLogin } from "@/pages/LoginPage.styled";
 
@@ -64,10 +62,6 @@ export default function LoginPage() {
                 </ServiceName>
                 <StyledGoogleLogin>
                     <GoogleLogin onSuccess={handleSuccess} useOneTap />
-                    <FcGoogle size={20} />
-                    <Text size="s" variant="gray" weight="bold">
-                        구글로 시작하기
-                    </Text>
                 </StyledGoogleLogin>
             </LoginPageWrapper>
         </GoogleOAuthProvider>
