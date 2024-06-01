@@ -1,13 +1,12 @@
 import { useNavigate } from "react-router-dom";
 
-import axios from "axios";
-
 import { Paragraph } from "@/components/typography/Paragraph";
 
 import { LoginPageWrapper, Logo, Slogan, ServiceName, StyledGoogleLogin } from "@/pages/LoginPage.styled";
 
 import logo from "@/assets/logo.png";
 
+import api from "@/api/api";
 import { useUserStore } from "@/store/store";
 import { GoogleOAuthProvider, GoogleLogin, CredentialResponse } from "@react-oauth/google";
 
@@ -27,7 +26,7 @@ export default function LoginPage() {
         if (response.credential) {
             const credential = response.credential;
             try {
-                const serverResponse = await axios.post<ServerResponse>(`/login/oauth2/google?code=${credential}`, {
+                const serverResponse = await api.post<ServerResponse>(`/login/oauth2/google?code=${credential}`, {
                     token: credential,
                 });
                 console.log("Server Response:", serverResponse.data);
