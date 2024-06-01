@@ -2,10 +2,11 @@ import { FcGoogle } from "react-icons/fc";
 import { useNavigate } from "react-router-dom";
 
 import axios from "axios";
-import styled from "styled-components";
 
 import { Paragraph } from "@/components/typography/Paragraph";
 import { Text } from "@/components/typography/Text";
+
+import { LoginPageWrapper, Logo, Slogan, ServiceName, StyledGoogleLogin } from "@/pages/LoginPage.styled";
 
 import logo from "@/assets/logo.png";
 
@@ -30,16 +31,12 @@ export default function LoginPage() {
             try {
                 const serverResponse = await axios.post<ServerResponse>(
                     `http://localhost:8080/login/oauth2/google?code=${credential}`,
-                    {
-                        token: credential,
-                    },
+                    { token: credential },
                 );
                 console.log("Server Response:", serverResponse.data);
                 const { accessToken, refreshToken } = serverResponse.data;
-
                 setTokens(accessToken, refreshToken);
-
-                navigate("/");
+                navigate("/", { replace: true });
             } catch (error) {
                 console.error("Error sending token to server:", error);
             }
@@ -76,43 +73,3 @@ export default function LoginPage() {
         </GoogleOAuthProvider>
     );
 }
-
-const LoginPageWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background: linear-gradient(135deg, #f0e4ff 0%, #cfe8ff 100%);
-`;
-
-const Logo = styled.img`
-    width: 100px;
-    height: 100px;
-    margin-bottom: 50px;
-`;
-
-const Slogan = styled.div`
-    text-align: center;
-    margin-bottom: 30px;
-`;
-
-const ServiceName = styled.div`
-    margin-bottom: 50px;
-`;
-
-const StyledGoogleLogin = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    background-color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-
-    &:hover {
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-`;

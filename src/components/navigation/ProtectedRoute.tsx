@@ -1,16 +1,11 @@
-import React from "react";
 import { Navigate, Outlet } from "react-router-dom";
 
 import { useUserStore } from "@/store/store";
 
-const ProtectedRoute: React.FC = () => {
-    const { currentUser } = useUserStore();
+const ProtectedRoute = () => {
+    const accessToken = useUserStore((state) => state.accessToken);
 
-    if (!currentUser) {
-        return <Navigate to="/login" replace />;
-    }
-
-    return <Outlet />;
+    return accessToken ? <Outlet /> : <Navigate to="/login" replace />;
 };
 
 export default ProtectedRoute;
